@@ -1,0 +1,179 @@
+
+
+@import "variables";
+
+a {
+	font-weight: bold;
+}
+
+@mixin container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $container-width;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+* { box-sizing: border-box }
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+	background: white;
+}
+
+a {
+	color: #00B7FF;
+}
+
+.container {
+	@include container;
+}
+
+input[type="submit"],
+button[type="submit"] {
+	font-size: 16px;
+	padding: 10px;
+}
+
+.form-group {
+	margin: 25px 0;
+	display: flex;
+	flex-direction: column;
+
+	label {
+		margin-bottom: 10px;
+	}
+
+
+	button[type="submit"],
+	input[type="password"],
+	input[type="email"] {
+		padding: 10px;
+		border: 1px solid #ddd;
+		font-size: 16px;
+	}
+}
+
+.nav {
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+
+	button {
+		background: none;
+		border: none;
+		font-size: 1em;
+		color: blue;
+		cursor: pointer;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.apps-list {
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	li {
+		width: 40%;
+		margin: 20px;
+		padding: 10px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+
+		@media screen and (max-width: $mobile-breakpoint) {
+			width: 100%;
+		}
+	}
+}
+
+.app-item-title {
+	display: flex;
+
+	h4 {
+		cursor: pointer;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.emoji {
+	margin-right: 15px;
+}
+
+.login {
+	max-width: $mobile-breakpoint / 2;
+
+	.login-group {
+		margin-bottom: 30px;
+
+		label {
+			margin-bottom: 10px;
+			display: inline-block;
+			font-weight: bold;
+		}
+	}
+
+	input[type="text"],
+	input[type="password"] {
+		border: none;
+		border-bottom: 1px solid rgba(0,0,0,.12);
+		display: block;
+		font-size: 18px;
+		font-family: "Helvetica","Arial",sans-serif;
+		margin: 0;
+		padding: 4px 0;
+		width: 100%;
+		background: 0 0;
+		text-align: left;
+		color: inherit;
+	}
+
+	input[type="submit"] {
+		// From: https://getmdl.io/components
+		background: rgba(158,158,158,.2);
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+		border: none;
+		border-radius: 2px;
+		color: #000;
+		position: relative;
+		height: 36px;
+		margin: 0;
+		min-width: 64px;
+		padding: 0 16px;
+		display: inline-block;
+		text-transform: uppercase;
+		letter-spacing: 0;
+		overflow: hidden;
+		will-change: box-shadow;
+		transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+		outline: none;
+		cursor: pointer;
+		text-decoration: none;
+		text-align: center;
+		line-height: 36px;
+		vertical-align: middle;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	input[disabled] {
+		background-color: rgba(0,0,0,.12);
+		color: rgba(0,0,0,.26);
+		box-shadow: none;
+	}
+}
