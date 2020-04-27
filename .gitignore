@@ -20,5 +20,4 @@ jspm_packages
 .node_repl_history
 *.tgz
 .DS_Store
-*.min.js
-*.min.css
+dist/

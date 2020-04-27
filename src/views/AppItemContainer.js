@@ -27,7 +27,7 @@ export default function AppItemContainer({match}) {
 					shouldShowUsers={true}
 					users={users}
 				/>
-			</div>
+			</div>;
 		}
 
 		return <Redirect to={'/login'} />;

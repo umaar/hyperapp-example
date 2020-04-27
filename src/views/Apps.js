@@ -4,15 +4,15 @@ import auth from '../components/auth';
 import AppItem from './AppItem';
 
 function AppsList({apps}) {
-	return function() {
+	return function () {
 		return <ul class="apps-list">
 			{apps.map(({id, name, created, logo}) => (
 				<li>
 					<AppItem id={id} name={name} created={created} logo={logo} />
 				</li>
 			))}
-		</ul>
-	}
+		</ul>;
+	};
 }
 
 export default function Apps() {
@@ -26,10 +26,10 @@ export default function Apps() {
 
 					<AppsList apps={state.apps} />
 				</div>
-			</div>
+			</div>;
 		}
 
-		return <Redirect to={'/login'} />
+		return <Redirect to={'/login'} />;
 	};
 }
 

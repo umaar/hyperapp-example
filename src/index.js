@@ -5,12 +5,10 @@ import {initialiseState} from './state/state';
 import {actions} from './actions/actions';
 import {view} from './routes';
 
-import './styles/app.scss';
-
 function init() {
 	const state = initialiseState();
-	const appRootEl = document.querySelector('.app-root');
-	const main = app(state, actions, view, appRootEl);
+	const appRootElement = document.querySelector('.app-root');
+	const main = app(state, actions, view, appRootElement);
 	location.subscribe(main.location);
 }
 

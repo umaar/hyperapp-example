@@ -39,9 +39,9 @@ export const actions = {
 				const user = auth.getUser();
 				location.actions.go('/apps');
 				actions.setSuccessfulLoginStatus(user);
-			} catch (err) {
-				console.error('Error logging in', err);
-				actions.setUnsuccessfulLoginStatus(err);
+			} catch (error) {
+				console.error('Error logging in', error);
+				actions.setUnsuccessfulLoginStatus(error);
 			}
 		};
 	},
@@ -102,8 +102,8 @@ export const actions = {
 					path: '/apps'
 				});
 				actions.updateAppsList(apps);
-			} catch (err) {
-				console.error('Error getting apps', err);
+			} catch (error) {
+				console.error('Error getting apps', error);
 			}
 		};
 	},
@@ -117,6 +117,7 @@ export const actions = {
 							users
 						});
 					}
+
 					return app;
 				})
 			};
@@ -150,8 +151,8 @@ export const actions = {
 					users: allUsers,
 					id
 				});
-			} catch (err) {
-				console.error('Error getting users', err);
+			} catch (error) {
+				console.error('Error getting users', error);
 			}
 		};
 	}

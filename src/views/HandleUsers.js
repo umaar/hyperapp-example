@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp';
 import {Link} from '@hyperapp/router';
 
 function UsersList({users}) {
-	return function() {
+	return function () {
 		return <ol>
 			{users && users.map(({email, name}) => (
 				<li>
@@ -11,7 +11,7 @@ function UsersList({users}) {
 					</p>
 				</li>
 			))}
-		</ol>
+		</ol>;
 	};
 }
 
@@ -31,6 +31,6 @@ export default function HandleUsers({shouldShowUsers, id, users}) {
 			<Link to={`/apps/${id}`}>
 				View Users
 			</Link>
-		</div>
+		</div>;
 	};
-};
+}

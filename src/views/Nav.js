@@ -14,8 +14,9 @@ function LoginOrLogout() {
 						<button onclick={logout}>(Sign out)</button>
 					</small>
 				</p>
-			</div>
+			</div>;
 		}
+
 		return <p>
 			<Link to="/login">Login</Link>
 		</p>;
@@ -23,7 +24,7 @@ function LoginOrLogout() {
 }
 
 export default function Nav() {
-	return function() {
+	return function () {
 		return <div>
 			<ul class="nav">
 				<li>
@@ -40,6 +41,6 @@ export default function Nav() {
 			<Route path="/login" render={Login} />
 			<Route path="/apps" render={Apps} />
 			<Route path={'/apps/:appId'} render={AppItemContainer} />
-		</div>
-	}
+		</div>;
+	};
 }

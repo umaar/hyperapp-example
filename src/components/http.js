@@ -26,9 +26,10 @@ const http = {
 			if (statusCode >= 200 && statusCode < 300) {
 				return response.json();
 			}
+
 			throw new Error(`${response.statusText} (${statusCode})`);
-		} catch (err) {
-			throw new Error(err);
+		} catch (error) {
+			throw new Error(error);
 		}
 	}
 };

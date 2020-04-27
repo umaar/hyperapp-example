@@ -3,6 +3,6 @@ import {h, app} from 'hyperapp';
 
 export default function Home() {
 	return function () {
-		return <Redirect to={'/apps'} />
+		return <Redirect to={'/apps'} />;
 	};
-};
+}

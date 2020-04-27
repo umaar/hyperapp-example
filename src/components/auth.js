@@ -21,6 +21,7 @@ class Auth {
 			this.storage.set(accessToken);
 			return true;
 		}
+
 		throw new Error('Could not access your account');
 	}
 

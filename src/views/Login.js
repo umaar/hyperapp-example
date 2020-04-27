@@ -3,22 +3,22 @@ import {Redirect} from '@hyperapp/router';
 import auth from '../components/auth';
 
 function onSubmit(actions) {
-	return function(evt) {
-		evt.preventDefault();
+	return function (event) {
+		event.preventDefault();
 		actions.login();
-	}
+	};
 }
 
 function onEmailInput(actions) {
-	return function(evt) {
-		actions.handleEmailUpdate(evt.target.value)
-	}
+	return function (event) {
+		actions.handleEmailUpdate(event.target.value);
+	};
 }
 
 function onPasswordInput(actions) {
-	return function(evt) {
-		actions.handlePasswordUpdate(evt.target.value)
-	}
+	return function (event) {
+		actions.handlePasswordUpdate(event.target.value);
+	};
 }
 
 export default function Login() {
@@ -46,7 +46,6 @@ export default function Login() {
 					/>
 				</div>
 
-
 				<div class="login-group">
 					<label for="password">
 						Password
@@ -66,4 +65,4 @@ export default function Login() {
 			</form>
 		</div>;
 	};
-};
+}

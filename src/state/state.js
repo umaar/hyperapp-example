@@ -12,4 +12,4 @@ export function initialiseState() {
 		apps: [],
 		userPageIndex: 0
 	};
-};
+}

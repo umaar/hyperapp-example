@@ -1,21 +1,21 @@
-// import {Redirect, Link} from '@hyperapp/router';
-import { formatDistance } from 'date-fns'
+// Import {Redirect, Link} from '@hyperapp/router';
+import {formatDistance} from 'date-fns';
 import {h, app} from 'hyperapp';
 import HandleUsers from './HandleUsers';
 
 function onBlur({actions, id}) {
-	return function(evt) {
-		actions.updateApp({id, name: evt.target.textContent.trim()});
-	}
+	return function (event) {
+		actions.updateApp({id, name: event.target.textContent.trim()});
+	};
 }
 
 function onKeyDown({actions, id}) {
-	return function(evt) {
-		if (evt.key === 'Enter') {
-			evt.preventDefault();
-			actions.updateApp({id, name: evt.target.textContent.trim()});
+	return function (event) {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			actions.updateApp({id, name: event.target.textContent.trim()});
 		}
-	}
+	};
 }
 
 export default function AppItem({users, id, name, created, logo, shouldShowUsers = false}) {
@@ -26,11 +26,11 @@ export default function AppItem({users, id, name, created, logo, shouldShowUsers
 		return <div>
 			<div class="app-item-title">
 				<span class="emoji">✏️</span> <h4
-						onblur={onBlur({actions, id})}
-						contenteditable
-						onkeydown={onKeyDown({actions, id})}>
-						{name}
-					</h4>
+					onblur={onBlur({actions, id})}
+					contenteditable
+					onkeydown={onKeyDown({actions, id})}>
+					{name}
+				</h4>
 			</div>
 
 			<p title={new Date(created)}>
@@ -38,6 +38,6 @@ export default function AppItem({users, id, name, created, logo, shouldShowUsers
 			</p>
 
 			<HandleUsers shouldShowUsers={shouldShowUsers} id={id} users={users} />
-		</div>
+		</div>;
 	};
-};
+}
