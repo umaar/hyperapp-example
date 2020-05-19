@@ -1,5 +1,5 @@
 # The default target must be at the top
-.DEFAULT_GOAL := start
+.DEFAULT_GOAL := build
 
 install:
 	npm install
@@ -8,13 +8,13 @@ update-deps:
 	ncu -u
 	npm i line-clamp@1.2.10 --save-exact
 
-start:
+build:
 	./node_modules/.bin/rollup -c -w
 
 lint:
 	./node_modules/.bin/xo
 
-server:
+run-server:
 	node server/index.js
 
 test: lint
