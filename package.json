@@ -27,7 +27,7 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "faker": "^3.0.1",
-    "jsonwebtoken": "^5.5.4",
+    "jsonwebtoken": "^9.0.0",
     "morgan": "^1.6.1"
   },
   "xo": {
